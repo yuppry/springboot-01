@@ -44,18 +44,6 @@ public class SpringMavenApplication {
 		}
 	}
 
-	@RestController
-	@RequestMapping("/reservations")
-	public class ReservationController{
-		@Autowired
-		private ReservationRepository reservationRepository;
-
-		@GetMapping
-		public Iterable<Reservation> getReservations(){
-			return this.reservationRepository.findAll();
-		}
-	}
-
 }
 
 
