@@ -20,17 +20,17 @@ public class SpringMavenApplication {
 		SpringApplication.run(SpringMavenApplication.class, args);
 	}
 
-//	@RestController
-//	@RequestMapping("/rooms")
-//	public class RoomController{
-//		@Autowired
-//		private RoomRepository roomRepository;
-//
-//		@GetMapping
-//		public Iterable<Room> getRooms(){
-//			return this.roomRepository.findAll();
-//		}
-//	}
+	@RestController
+	@RequestMapping("/rooms")
+	public class RoomController{
+		@Autowired
+		private RoomRepository roomRepository;
+
+		@GetMapping
+		public Iterable<Room> getRooms(){
+			return this.roomRepository.findAll();
+		}
+	}
 //
 //	@RestController
 //	@RequestMapping("/guests")
