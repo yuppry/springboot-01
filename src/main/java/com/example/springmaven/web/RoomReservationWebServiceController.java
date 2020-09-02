@@ -4,16 +4,13 @@ import com.example.springmaven.business.domain.RoomReservation;
 import com.example.springmaven.business.service.ReservationService;
 import com.example.springmaven.data.entity.Reservation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/reservations")
+@RequestMapping("/api")
 public class RoomReservationWebServiceController {
 
     private final ReservationService reservationService;
@@ -22,8 +19,8 @@ public class RoomReservationWebServiceController {
     public RoomReservationWebServiceController(ReservationService reservationService) {
         this.reservationService = reservationService;
     }
-
-    @GetMapping
+    @CrossOrigin
+    @GetMapping("/v1/reservations")
     public List<RoomReservation> getRoomReservations(@RequestParam(name="date", required = false)String dateString){
         Date date = DateUtils.createDateFromDateString(dateString);
         return this.reservationService.getRoomReservationsForDate(date);
