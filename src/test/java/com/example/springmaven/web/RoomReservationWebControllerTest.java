@@ -2,7 +2,6 @@ package com.example.springmaven.web;
 
 import com.example.springmaven.business.domain.RoomReservation;
 import com.example.springmaven.business.service.ReservationService;
-import com.example.springmaven.data.entity.Reservation;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
